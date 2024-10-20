@@ -1,0 +1,124 @@
+<!-- Here, we will learn "DOM MANIPULATION" -->
+
+<!--This Entire is "document" -->
+<html>
+    <head>
+        <title>Query Selector</title>
+    </head>
+    <style>
+        /* Will create a class, whose color will be green */
+        .green-color {
+            color:rgb(45, 204, 143);
+        }
+        .underline {
+            text-decoration: underline;
+        }
+    </style>
+    <body>
+        <nav class="block">
+            <p class="paragraph">
+                Welcome to my Website
+            </p>
+        </nav>
+
+        <div class="block">
+            <h4>
+                Hey There, My name is
+                <span id="username">Jaimin Jariwala</span> ;
+            </h4>
+            <p class="paragraph">
+                Here's a code for you
+            </p>
+            <pre><code>console.log('Hey There')</code>
+            </pre>
+        </div>
+
+        <script>
+            // query selector
+            /*
+                selectors: we can select an element by,
+                - tagName
+                - id (#)
+                - class (.)
+            */
+
+            // querySelector using tagName
+            const body = document.querySelector('body');
+            console.log(body.innerHTML)
+            // body.innerHTML = "<h1>HACKED!!!</h1>" // this is called "DOM Manipulation!"
+
+            const div = document.querySelector('div');
+            console.log(div.innerHTML)
+            // Note: If there are more than 1 "div"s then the immediate 1st "div" from top of the JS code will be manipulated, rest "div"s beneath it will remain as it is!
+
+            // So what exactly does "querySelector do?"
+            // Answer: Whichever the first element, this selector gets, it holds it, and perform the operations.
+
+
+
+
+
+            // DOM Manipulation Exercise: 
+            const code = document.querySelector('code')
+            code.innerHTML = alert('Hello')
+            code.innerHTML = "<h1>THANK YOU</h1>"
+
+
+
+
+            // querySelector using Id
+            const username = document.querySelector("#username")
+            username.innerText = 'Calvin Klein'
+            
+            // querySelector using class
+            const ele = document.querySelector('.block')
+            console.log(ele);
+
+
+
+
+
+            // some oher properties besides .innerHTML:
+            const ele2 = document.querySelector("div")
+            console.log("DIV CHILDREN: ", ele2.children)
+            console.log("DIV PARENT ELEMENT: ", ele2.parentElement)
+            console.log("DIV's PARENT's CHILDREN: ", ele2.parentElement.children) // will return 2 script tags, one is our and 2nd is injected by live server, so we just need to ignore that!
+
+
+
+
+
+            // querySelectorAll method:
+            const allElements = document.querySelectorAll(".block") // allElements is now an ARRAY
+            allElements.forEach((e) => {    // will take element
+                console.log(e.innerHTML)
+            })
+
+
+
+            // SELECT ELEMENT BY ID:
+            const el = document.getElementById("username")  // no need to use '#', because function name represents what it does!
+            console.log(el)
+
+            // inject the .green-color "class" into "span" tag using js. We can even pass multiple classes!
+            el.classList.add('green-color', 'underline')
+            // SO WE CAN ADD CLASSES ON ANY ELEMENT and WE CAN EVEN ACCESS IT like...
+            console.log(el.classList)
+            // And we can even remove the class from an element by saying...
+            // el.classList.remove("green-color")
+
+
+
+
+
+
+            // We can even add INLINE STYLING using JS
+            const el2 = document.getElementById("username")
+            el2.innerText = "Stevens Brown"
+            el2.style.textDecoration = "underline"
+            el2.style.color = "tomato"
+            console.log(el2.parentElement)
+            el2.parentElement.style.background = "green"
+        </script>
+    </body>
+</html>
