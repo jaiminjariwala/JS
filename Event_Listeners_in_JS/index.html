@@ -1,0 +1,110 @@
+<html>
+    <head>
+        <title>Event Listeners in JS</title>
+    </head>
+    <body>
+        <nav class="block">
+            <p>Welcome to my website</p>
+        </nav>
+
+        <div class="block">
+            <h4 id="name-block">
+                Hey There, My name is 
+                <span id="username">Jaimin Jariwala</span> :)
+            </h4>
+
+            <p class="block">Here is a code for you</p>
+
+            <pre><code>console.log("Hey, There")</code></pre> <!-- Pre-Formatted tag -->
+        </div>
+        
+        <!-- METHOD 1: -->
+        <button onclick="handleButtonClick()">Click Me!</button>  <!-- "onClick" is an attribute -->
+
+        <!-- METHOD 2: -->
+        <button id="clickButton">Click Again!</button>
+
+        <!-- Exercise -->
+        <button id="button3">BUTTON 3</button>
+
+
+
+        <script>
+            // Functionality for METHOD 1:
+            function handleButtonClick() {
+                console.log("Button is clicked");
+                alert("Hey, I am clicked");
+            }
+
+
+
+
+
+            // Functionality for MEHTOD 2:
+            // get the element by Id...
+            const el = document.getElementById("clickButton");
+
+            // now so we have grabbed the element, we can attach EVENT LISTENERS TO IT!
+            // ========== METHOD 1: ==========
+            el.onclick = function () {
+                console.log("OH HELLO, AM CLICKED AGAIN!");
+            };
+            // There's a problem in METHOD 1. If somebody is working in production in team, and if one person declares another function after your function, then his function will override on yours. Therefore, METHOD 2 is far relevant!
+
+            // ========== METHOD 2: ==========
+            // This is the more perfect! Now if some team member comes and add the same click event, both the event will be triggered and both result will be printed in console!
+            el.addEventListener('click', function () {
+                console.log("I am clicked")
+            }) // want to capture "click" event!
+        </script>
+
+        <script>
+            el.onclick = () => {
+                console.log("Hacked!") // this will be printed and not the above one, if used ".onclick event!" rather than "addEventListener"
+            }
+        </script>
+
+
+
+
+        <script>
+            // Exercise 1: Create a Button3, On Clicking that button, the "name-block" content background color should change!
+
+            // grab "button3" and reference the "h4" tag to grab the name block
+            const button3Element = document.getElementById('button3')
+            const nameBlock = document.getElementById('name-block')
+
+            button3Element.addEventListener('click', () => {
+                console.log("BUTTON 3 is clicked!")
+
+                // let's create a toggling effect
+                if (nameBlock.style.background === 'lightgreen') {
+                    nameBlock.style.color = "purple"
+                }
+                else {
+                    nameBlock.style.background = "lightgreen"
+                }
+                
+            })
+        </script>
+
+
+
+
+
+
+        <script>
+            // Exercise 2: Clicking on any text or element on website, removes that from DOM!
+            
+            // Step 1: first grab all the elements
+            const allChildren = document.querySelector('body').children
+            console.log(allChildren)
+            
+            for (let i=0; i<allChildren.length; i++) {
+                allChildren.item(i).addEventListener('click', () => {
+                    allChildren.item(i).remove()
+                })
+            }
+        </script>
+    </body>
+</html>
