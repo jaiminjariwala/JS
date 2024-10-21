@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>Dynamically Add Elements</title>
+    </head>
+    <body>
+        <div id="my-container">
+
+        </div>
+        <button id="clickButton">Click Me</button>
+    </body>
+
+    <script>
+        const button = document.getElementById('clickButton')
+        const container = document.getElementById('my-container')
+
+        let count = 1
+
+        button.addEventListener('click', () => {
+            // create an element
+            const el = document.createElement('li')
+            el.innerText = count
+            container.appendChild(el)   // to keep on adding element and thereby printing name, we use "appendChild" 
+            count++
+        })
+    </script>
+</html>
