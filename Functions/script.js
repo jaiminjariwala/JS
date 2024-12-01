@@ -23,7 +23,7 @@ console.log(p)
 
 // METHOD 1:
 function addNumbers() {
-    // whenever function receive parameters, js by default, puts into arguments.
+    // whenever function receives arguments on call, js by default, puts into defined function parameters!
     console.log(arguments)  // arguments is basically an object!
 
     let ans = 0
