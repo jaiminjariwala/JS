@@ -1,0 +1,65 @@
+<html>
+  <head>
+    <title>Promises in JS</title>
+  </head>
+  <body>
+    <nav class="block">
+      <p class="pargraph">Welcome to my website</p>
+    </nav>
+
+    <div class="block">
+      <h4 id="name-block">
+        Hey There, My name is
+        <span id="username">Jaimin Jariwala</span>
+      </h4>
+
+      <p class="block">Here is a code for you</p>
+
+      <pre><code>console.log("Hey There")</code></pre>
+    </div>
+
+    <div id="my-container"></div>
+
+    <button id="clickButton">Click Me</button>
+
+
+    
+    <script>
+      let a = 10;
+      let b = 20;
+      let result = a + b;
+
+      // METHOD-1:
+      // there exist a task in the below function which will take time, so making the function asynchronus!
+      async function getData() {
+        // we use fetch (built-in promise) function if we want to fetch something from Network or URL
+        let resultFromServer = await fetch(
+          "https://jsonplaceholder.typicode.com/posts"
+        );
+        console.log(await resultFromServer.json());
+      }
+
+      // this will be executed later!
+      getData();
+
+      // METHOD-2:
+      /* 
+        if the "promise is resolved", that is the result arrives succesfully from the given link, then... ".then" callback will run!
+
+        else if the "promise is rejected", that is the result throws some error, then it will be handled using ".catch" callback!
+
+        else ".finally" callback will always run, even if the promise is resolved or rejected!
+      */
+      fetch("https://jsonplaceholder.typicode.com/posts")
+        .then((data) => {
+          console.log(data);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+
+      // this will be executed first
+      console.log(result);
+    </script>
+  </body>
+</html>
