@@ -5,7 +5,7 @@ async function getData(latitude, longitude) {
     `http://api.weatherapi.com/v1/current.json?key=2fe92bb17eb74e288fd95215240212&q=${latitude},${longitude}&aqi=yes`
   );
 
-  return promise.json();
+  return await promise.json();
 }
 
 async function gotLocation(position) {
