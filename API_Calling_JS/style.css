@@ -1,0 +1,42 @@
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+}
+
+.label {
+    font-size: 1.5rem;
+    background-color: #CDC1FF;
+    padding: 3px 10px;
+    margin-right: 5px;
+    margin-top: 10px;
+    border-radius: 10px;
+    font-weight: 700;
+}
+
+#city-input, #search-button {
+    font-size: 1.5rem;
+    border-style: none;
+    padding: 3px 7px;
+    border-radius: 10px;
+    text-transform: capitalize;
+    border: 2px solid rgb(232, 232, 232);
+    background-color: white;
+    margin-right: 5px;
+}
+
+#city-input:focus {
+    outline: 2px solid #CDC1FF;
+}
