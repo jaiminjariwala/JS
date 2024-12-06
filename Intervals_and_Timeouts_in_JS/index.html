@@ -1,32 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Stop-Watch</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div>
-        <div>
-            <h1 id="time"></h1> <!-- In this tag, I want to show the time. -->
-            <!-- <button id="stop-timer-button">Stop Timer</button> -->
-        </div>
-    </div>
-    
-    <div>
-        <h1>Welcome to Stop-Watch</h1>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="main-content">
+      <div>
+        <h1 id="time"></h1>
+        <!-- In this tag, will show the current time. -->
+      </div>
+
+      <div class="stop-watch-content-div">
+        <h1>StopWatch</h1>
         <div id="countdown">
-            <div id="hours">00</div>
-            <div class="colon">:</div>
-            <div id="minutes">00</div>
-            <div class="colon">:</div>
-            <div id="seconds">00</div>
+          <div id="hours">00</div>
+          <div class="colon">:</div>
+          <div id="minutes">00</div>
+          <div class="colon">:</div>
+          <div id="seconds">00</div>
         </div>
-        <button id="start-timer-button">Start Timer</button>
-        <button id="stop-timer-button">Stop Timer</button>
+        <div>
+          <button id="start-timer-button">Start</button>
+          <button id="resume-timer-button">Resume</button>
+          <button id="pause-timer-button">Pause</button>
+        </div>
+      </div>
     </div>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

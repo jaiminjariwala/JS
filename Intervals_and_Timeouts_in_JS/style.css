@@ -1,5 +1,69 @@
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 20px;
+}
+
+#time {
+    font-weight: 400;
+}
+
+.stop-watch-content-div {
+    border: 3px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #C9E9D2;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    font-size: 38px;
+}
+
+h1 {
+    margin: 5px;
+}
+.stop-watch-content-div h1 {
+    margin: 0;
+    margin-bottom: 10px;
+    font-weight: 600;
+    padding: 0 10px;
+}
+
 #countdown {
     display: flex;
-    font-size: 60px;
+    font-size: 70px;
     font-weight: 600;
+}
+
+#resume-timer-button, #pause-timer-button, #start-timer-button {
+    padding: 10px;
+    font-size: 25px;
+    font-weight: 500;
+    background-color: #2E073F;
+    color: white;
+    border-radius: 7px;
+    margin-right: 10px;
+    margin-bottom: 6px;
+    border: 2px solid black;
+    letter-spacing: 1.5px;
+}
+
+#resume-timer-button:active, #pause-timer-button:active, #start-timer-button:active {
+    background-color: #4a1c5e;
 }
