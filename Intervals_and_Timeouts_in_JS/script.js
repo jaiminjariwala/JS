@@ -58,7 +58,7 @@ let loopingInterval = null;
 resumeTimerButton.addEventListener("click", () => {
   // Prevent multiple intervals from being created
   if (!loopingInterval) {   // not of loopingInterval means, a timer is already running!
-    loopingInterval = setInterval(looping, 100);
+    loopingInterval = setInterval(looping, 1000);
   }
 });
 pauseTimerButton.addEventListener("click", () => {
@@ -79,5 +79,5 @@ startTimerButton.addEventListener("click", () => {
   minutes.innerText = formatTime(minutesCount);
   hours.innerText = formatTime(hoursCount);
   
-  loopingInterval = setInterval(looping, 100);
+  loopingInterval = setInterval(looping, 1000);
 })
