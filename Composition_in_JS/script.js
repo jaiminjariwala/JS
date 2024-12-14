@@ -16,5 +16,8 @@ function composeTwoFunction(fn1, fn2) {
     }
 }
 
+// above function in MODERN JS Format
+const compose2functions = (fn1, fn2) => (a, b) => fn2(fn1(a, b))
+
 const task = composeTwoFunction(add, square)
 console.log(task(2,3))
