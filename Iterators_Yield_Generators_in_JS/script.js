@@ -44,3 +44,36 @@ while(!result.done) {
     console.log(result.value)
     result = myIterator.next()
 }
+
+
+
+
+// Generator Function and yield keyword in JS
+function* count() {
+    yield 2
+    yield 4
+    yield 6
+    yield 8
+}
+const even = count()    // calling count() returns the generator object.
+for (const val of even) {
+    console.log(`Even Numbers are: ${val}`)
+}
+
+
+// to create our own iterator similar to one we created earlier...
+function* makeMyNewIterator(start, end, stepSize=1) {
+    for (let i=start; i<=end; i+=stepSize) {
+        yield i
+    }
+}
+let one = makeMyNewIterator(1, 30, 1)
+// for (const val of one) {
+//     console.log(val)
+// }
+
+const btn = document.getElementById("next-btn")
+// accesing the next button
+btn.addEventListener("click", () => {
+    btn.innerText = one.next().value
+})
